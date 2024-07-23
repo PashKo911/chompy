@@ -1727,8 +1727,7 @@ h6 {
   aspect-ratio: 1;
   z-index: 1000;
   transition: top .3s linear;
-  will-change: top;
-  width: 3%
+  will-change: top
 }
 @media (min-width:61.99875em) {
   .menu__list {
@@ -2630,9 +2629,6 @@ h6 {
   .join__button {
     box-shadow: 0 .3125rem 0 0 var(--text-primary)
   }
-  .bubble {
-    width: 6%
-  }
 }
 @media (max-width:37.5em) {
   .card-about__decor img:nth-child(2) {
@@ -2763,6 +2759,11 @@ h6 {
     -webkit-column-gap: 1.25rem;
     -moz-column-gap: 1.25rem;
     column-gap: 1.25rem
+  }
+}
+@media (max-width:23.75em) {
+  .join .bubble {
+    display: none
   }
 }
 @media (max-width:61.99875em) and (max-width:61.99875em) and (min-width:62em) {
@@ -3256,18 +3257,16 @@ h6 {
   .tokenomiks__bg img:nth-child(3) {
     bottom: clamp(.5625rem ,.0267857143rem + 2.6785714286vw ,1.6875rem)
   }
+  .top-footer {
+    row-gap: clamp(1.25rem ,.9523809524rem + 1.4880952381vw ,1.875rem)
+  }
+  .top-footer__social-link {
+    width: clamp(2.25rem ,1.7142857143rem + 2.6785714286vw ,3.375rem)
+  }
 }
 @media (min-width:23.4375em) and (max-width:120em) {
   .content-tokenomiks__item {
     padding-right: clamp(1.25rem ,2.4150485437rem + -.9708737864vw ,2.1875rem)
-  }
-}
-@media (min-width:23.4375em) and (max-width:62em) {
-  .top-footer {
-    row-gap: clamp(1.25rem ,.8701377634rem + 1.6207455429vw ,1.875rem)
-  }
-  .top-footer__social-link {
-    width: clamp(2.25rem ,1.5662479741rem + 2.9173419773vw ,3.375rem)
   }
 }
 @media (any-hover:hover) {

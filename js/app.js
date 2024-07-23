@@ -1,9 +1,5 @@
 (() => {
     "use strict";
-    var __webpack_require__ = {};
-    (() => {
-        __webpack_require__.p = "/";
-    })();
     const modules_flsModules = {};
     function isWebp() {
         function testWebP(callback) {
@@ -364,10 +360,8 @@
     }
     const da = new DynamicAdapt("max");
     da.init();
-    const about_bubble = __webpack_require__.p + "src/img/about/bubble.png";
     class Bubble {
-        constructor(imgSrc, snowflakesNumber) {
-            this.imgSrc = imgSrc;
+        constructor(snowflakesNumber) {
             this.snowflakesNumber = snowflakesNumber;
         }
         getRandomNumber(min = 0, max = 100) {
@@ -383,11 +377,11 @@
                 }), this.getRandomNumber(minInterval, maxInterval));
             }
         }
-        render(containerSelector, minLakeSize = 20, maxLakeSize = 50) {
+        render(containerSelector, imgSrc, minLakeSize = 20, maxLakeSize = 50) {
             if (containerSelector) this.snowContainer = document.querySelector(containerSelector);
             for (let i = 0; i < this.snowflakesNumber; i++) {
                 const lake = document.createElement("img");
-                lake.setAttribute("src", this.imgSrc);
+                lake.setAttribute("src", imgSrc);
                 const lakeSize = this.getRandomNumber(minLakeSize, maxLakeSize) + "px";
                 lake.style.width = lakeSize;
                 lake.style.height = lakeSize;
@@ -399,7 +393,7 @@
         }
     }
     window.onload = function() {
-        const bubble = new Bubble(about_bubble, 10);
+        const bubble = new Bubble(10);
         bubble.render(".about__bubbles-wrapper", "img/about/bubble.png");
         bubble.render(".join__bubbles-wrapper", "img/joinUs/bubble.png");
     };
