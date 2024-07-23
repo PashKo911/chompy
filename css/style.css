@@ -203,7 +203,7 @@ h6 {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 50
+  z-index: 150
 }
 .header::before {
   content: "";
@@ -688,12 +688,6 @@ h6 {
   transform-origin: bottom center;
   -webkit-animation: seaweeds 7.5s infinite linear;
   animation: seaweeds 7.5s infinite linear
-}
-.about__bg img:nth-child(7) {
-  width: 100%;
-  right: 0;
-  bottom: 0;
-  z-index: 5
 }
 .about__container {
   max-width: 100rem;
@@ -1532,13 +1526,6 @@ h6 {
   aspect-ratio: 1920/600;
   z-index: 5
 }
-.join__bg img:nth-child(4) {
-  bottom: 0;
-  left: 7%;
-  width: 87%;
-  z-index: 70;
-  aspect-ratio: 1739/497
-}
 .join__content {
   position: absolute;
   width: 100%;
@@ -1665,6 +1652,14 @@ h6 {
   position: relative;
   z-index: 5
 }
+.join__bubbles-wrapper {
+  position: absolute;
+  width: 100%;
+  height: 44%;
+  bottom: 0;
+  left: 0;
+  overflow: hidden
+}
 .top-footer {
   display: flex;
   justify-content: space-between;
@@ -1715,6 +1710,11 @@ h6 {
 }
 .top-footer__social-link img {
   width: 59%
+}
+.bubble {
+  position: absolute;
+  aspect-ratio: 1;
+  z-index: 1000
 }
 @media (min-width:61.99875em) {
   .menu__list {
@@ -1782,9 +1782,6 @@ h6 {
   .hero__social-block {
     top: -9%
   }
-  .about__bg img:nth-child(7) {
-    aspect-ratio: 1739/801
-  }
   .about__img {
     flex-basis: 48%;
     align-self: flex-end
@@ -1797,7 +1794,7 @@ h6 {
   }
   .how-buy__title-wrp {
     opacity: 0;
-    transition: opacity .5s ease 1.8s
+    transition: opacity .5s ease 1.4s
   }
   .how-buy__title-wrp._watcher-view {
     opacity: 1
@@ -2314,8 +2311,6 @@ h6 {
   .hero__bg img:nth-child(4) {
     top: 30%;
     left: 3%;
-    -webkit-transform: translateX(-50%);
-    transform: translateX(-50%);
     width: 95%
   }
   .hero__bg img:nth-child(5) {
@@ -2439,10 +2434,13 @@ h6 {
   .bottom-how {
     flex-direction: column-reverse;
     margin-top: auto;
-    row-gap: 6.25rem
+    row-gap: 6.25rem;
+    max-width: 37.5rem;
+    width: 100%;
+    margin: 0 auto
   }
   .bottom-how__ship {
-    width: 50%;
+    width: 67%;
     align-self: flex-start
   }
   .bottom-how__ship img:nth-child(1) {
@@ -2452,7 +2450,8 @@ h6 {
   }
   .video-how {
     align-self: flex-end;
-    margin-left: 0
+    margin-left: 0;
+    width: 100%
   }
   .video-how__wraper._watcher-view img {
     -webkit-transform: translate(0,0);
@@ -2465,7 +2464,7 @@ h6 {
     transition: all .7s
   }
   .video-how__ground img:nth-child(2) {
-    bottom: -26%;
+    bottom: -18%;
     right: -9%
   }
   .partners__item {
@@ -2515,6 +2514,9 @@ h6 {
     top: -3%;
     aspect-ratio: 586/273;
     right: 4%
+  }
+  .join__bubbles-wrapper {
+    height: 42%
   }
   .top-footer {
     flex-direction: column
@@ -2595,6 +2597,9 @@ h6 {
   }
   .how-buy__title-wrp {
     width: 56%
+  }
+  .bottom-how__ship {
+    width: 50%
   }
   .partners {
     aspect-ratio: 768/360

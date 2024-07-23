@@ -1,5 +1,9 @@
 (() => {
     "use strict";
+    var __webpack_require__ = {};
+    (() => {
+        __webpack_require__.p = "/";
+    })();
     const modules_flsModules = {};
     function isWebp() {
         function testWebP(callback) {
@@ -360,6 +364,47 @@
     }
     const da = new DynamicAdapt("max");
     da.init();
+    const about_bubble = __webpack_require__.p + "src/img/about/bubble.png";
+    class Bubble {
+        constructor(imgSrc, snowflakesNumber) {
+            this.imgSrc = imgSrc;
+            this.snowflakesNumber = snowflakesNumber;
+            this.lakes = [];
+        }
+        getRandomNumber(min = 0, max = 100) {
+            return min + Math.floor(Math.random() * (max - min + 1));
+        }
+        showSnow(step = .2, maxTopPOsition = 100, minTopPosition = -10, minInterval = 10, maxInterval = 40) {
+            for (const lake of this.lakes) {
+                let topPosition = this.getRandomNumber(-30, -5);
+                setInterval((() => {
+                    topPosition += step;
+                    lake.style.bottom = topPosition + "%";
+                    if (topPosition >= maxTopPOsition) topPosition = minTopPosition;
+                }), this.getRandomNumber(minInterval, maxInterval));
+            }
+        }
+        render(containerSelector, minLakeSize = 1, maxLakeSize = 3) {
+            if (containerSelector) this.snowContainer = document.querySelector(containerSelector);
+            for (let i = 0; i < this.snowflakesNumber; i++) {
+                const lake = document.createElement("img");
+                lake.setAttribute("src", this.imgSrc);
+                const lakeSize = this.getRandomNumber(minLakeSize, maxLakeSize) + "%";
+                lake.style.width = lakeSize;
+                lake.style.aspectRatio = 1;
+                lake.style.left = this.getRandomNumber() + "%";
+                lake.className = "bubble";
+                this.snowContainer.append(lake);
+                this.lakes.push(lake);
+            }
+            this.showSnow();
+        }
+    }
+    window.onload = function() {
+        const bubble = new Bubble(about_bubble, 10);
+        bubble.render(".page__about");
+        bubble.render(".join__bubbles-wrapper");
+    };
     isWebp();
     addLoadedClass();
     menuInit();
