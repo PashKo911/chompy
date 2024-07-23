@@ -369,13 +369,12 @@
         constructor(imgSrc, snowflakesNumber) {
             this.imgSrc = imgSrc;
             this.snowflakesNumber = snowflakesNumber;
-            this.lakes = [];
         }
         getRandomNumber(min = 0, max = 100) {
             return min + Math.floor(Math.random() * (max - min + 1));
         }
         showSnow(step = .2, maxTopPOsition = 100, minTopPosition = -10, minInterval = 10, maxInterval = 40) {
-            for (const lake of this.lakes) {
+            for (const lake of this.snowContainer.children) {
                 let topPosition = this.getRandomNumber(-30, -5);
                 setInterval((() => {
                     topPosition += step;
@@ -384,18 +383,17 @@
                 }), this.getRandomNumber(minInterval, maxInterval));
             }
         }
-        render(containerSelector, imgSrc, minLakeSize = 1, maxLakeSize = 3) {
+        render(containerSelector, minLakeSize = 20, maxLakeSize = 50) {
             if (containerSelector) this.snowContainer = document.querySelector(containerSelector);
             for (let i = 0; i < this.snowflakesNumber; i++) {
                 const lake = document.createElement("img");
-                lake.setAttribute("src", imgSrc);
-                const lakeSize = this.getRandomNumber(minLakeSize, maxLakeSize) + "%";
+                lake.setAttribute("src", this.imgSrc);
+                const lakeSize = this.getRandomNumber(minLakeSize, maxLakeSize) + "px";
                 lake.style.width = lakeSize;
-                lake.style.aspectRatio = 1;
+                lake.style.height = lakeSize;
                 lake.style.left = this.getRandomNumber() + "%";
                 lake.className = "bubble";
                 this.snowContainer.append(lake);
-                this.lakes.push(lake);
             }
             this.showSnow();
         }
