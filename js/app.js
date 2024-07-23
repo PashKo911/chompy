@@ -402,8 +402,7 @@
     }
     window.onload = function() {
         const bubble = new Bubble(about_bubble, 10);
-        bubble.render(".page__about", "img/about/bubble.png");
-        bubble.render(".join__bubbles-wrapper", "img/joinUs/bubble.png");
+        bubble.render(".about__bubbles-wrapper", "img/about/bubble.png");
     };
     isWebp();
     addLoadedClass();

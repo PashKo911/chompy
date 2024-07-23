@@ -705,6 +705,16 @@ h6 {
   -webkit-animation: seaweeds 10.5s infinite linear;
   animation: seaweeds 10.5s infinite linear
 }
+.about__bubbles-wrapper {
+  position: absolute;
+  width: 100%;
+  height: 87%;
+  top: -4%;
+  left: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 200
+}
 .card-about {
   position: relative;
   aspect-ratio: 734/722;
@@ -1658,7 +1668,8 @@ h6 {
   height: 44%;
   bottom: 0;
   left: 0;
-  overflow: hidden
+  overflow: hidden;
+  pointer-events: none
 }
 .top-footer {
   display: flex;
