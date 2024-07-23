@@ -403,6 +403,7 @@
     window.onload = function() {
         const bubble = new Bubble(about_bubble, 10);
         bubble.render(".about__bubbles-wrapper", "img/about/bubble.png");
+        bubble.render(".join__bubbles-wrapper", "img/joinUs/bubble.png");
     };
     isWebp();
     addLoadedClass();
