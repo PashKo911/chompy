@@ -392,6 +392,8 @@
             this.showSnow();
         }
     }
+    document.getElementById("play-btn");
+    document.getElementById("video");
     window.onload = function() {
         const bubble = new Bubble(10);
         bubble.render(".about__bubbles-wrapper", "img/about/bubble.png");
