@@ -1166,53 +1166,17 @@ h6 {
   -webkit-transform: translate(0,0);
   transform: translate(0,0)
 }
-.partners__line {
-  display: flex;
-  align-items: center
-}
-.partners__row {
-  display: flex;
-  align-items: center;
-  flex-wrap: nowrap;
-  -webkit-column-gap: 9.5rem;
-  -moz-column-gap: 9.5rem;
-  column-gap: 9.5rem;
-  padding-left: 9.5rem;
-  -webkit-animation: line 20s linear infinite;
-  animation: line 20s linear infinite
-}
 .partners__item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
   position: relative;
-  aspect-ratio: 320/380;
-  width: 10.7vw
+  aspect-ratio: 215/378
 }
-.partners__item:nth-child(3n) {
-  aspect-ratio: 228/363;
-  width: 11.9vw
-}
-.partners__wrapper {
+.partners__item img {
   position: absolute;
   width: 100%;
-  height: 100%;
-  bottom: 0;
-  left: 0
-}
-.partners__item:nth-child(even) .partners__wrapper {
-  z-index: 40
-}
-.partners__wrapper img {
-  position: absolute;
-  width: 100%;
+  top: 0;
+  left: 0;
   -o-object-fit: cover;
   object-fit: cover
-}
-.partners__wrapper img:nth-child(1) {
-  top: -10%;
-  left: 0
 }
 @-webkit-keyframes dance {
   0% {
@@ -1921,12 +1885,6 @@ h6 {
     -moz-column-gap: .625rem;
     column-gap: .625rem
   }
-  .hero__wawe1 {
-    height: 7.5rem
-  }
-  .hero__wawes {
-    height: 7.5rem
-  }
   .how-buy {
     padding-top: 5rem
   }
@@ -1946,6 +1904,9 @@ h6 {
   }
   .how-sheet__text {
     font-size: 1rem
+  }
+  .partners__item {
+    margin-right: 15rem
   }
   .tokenomiks {
     margin-top: -5rem
@@ -2058,6 +2019,9 @@ h6 {
   .hero__social-link {
     width: 3.9375rem
   }
+  .hero__wawes {
+    bottom: 1.3%
+  }
   .about__container {
     -webkit-column-gap: 1.875rem;
     -moz-column-gap: 1.875rem;
@@ -2098,6 +2062,9 @@ h6 {
   }
   .bottom-how__video {
     margin-bottom: -3.25rem
+  }
+  .partners__item {
+    width: 13.9375rem
   }
   .tokenomiks__bg img:nth-child(2) {
     bottom: 5rem
@@ -2141,17 +2108,17 @@ h6 {
     column-gap: .625rem
   }
 }
+@media (min-width:160em) {
+  .hero__wawe1 {
+    height: 8.125rem
+  }
+  .hero__wawes {
+    height: 8.125rem
+  }
+}
 @media (max-width:95em) {
   .how-buy__title-wrp {
     top: 36%
-  }
-}
-@media (max-width:75em) {
-  .partners__row {
-    -webkit-column-gap: 7rem;
-    -moz-column-gap: 7rem;
-    column-gap: 7rem;
-    padding-left: 7rem
   }
 }
 @media (max-width:62em) {
@@ -2248,6 +2215,12 @@ h6 {
   }
   .how-sheet__title {
     font-size: .625rem
+  }
+  .partners__item {
+    width: 2.8125rem
+  }
+  .partners__item {
+    margin-right: 2.8125rem
   }
   .tokenomiks {
     margin-top: -.75rem
@@ -2563,12 +2536,6 @@ h6 {
     bottom: -18%;
     right: -9%
   }
-  .partners__item {
-    width: 11.7vw
-  }
-  .partners__wrapper img:nth-child(1) {
-    top: -16%
-  }
   .tokenomiks__bg img:nth-child(1) {
     top: -3.5%
   }
@@ -2697,18 +2664,6 @@ h6 {
   .partners {
     aspect-ratio: 768/360
   }
-  .partners__row {
-    -webkit-column-gap: 3.875rem;
-    -moz-column-gap: 3.875rem;
-    column-gap: 3.875rem;
-    padding-left: 3.875rem
-  }
-  .partners__item {
-    width: 15.8vw
-  }
-  .partners__wrapper img:nth-child(1) {
-    top: -35%
-  }
   .join__button {
     box-shadow: 0 .3125rem 0 0 var(--text-primary)
   }
@@ -2743,12 +2698,6 @@ h6 {
   }
   .hero__bg img:nth-child(6) {
     height: 55%
-  }
-  .partners__row {
-    -webkit-column-gap: 2.625rem;
-    -moz-column-gap: 2.625rem;
-    column-gap: 2.625rem;
-    padding-left: 2.625rem
   }
 }
 @media (max-width:26.875em) {
@@ -2949,6 +2898,9 @@ h6 {
   .bottom-how__video {
     margin-bottom: clamp(-3.25rem ,3.4741380603rem + -5.6034483836vw ,.0000000625rem)
   }
+  .partners__item {
+    width: clamp(6.875rem ,-.6745689655rem + 12.1767241379vw ,13.9375rem)
+  }
   .tokenomiks__bg img:nth-child(2) {
     bottom: clamp(.875rem ,-3.5344827586rem + 7.1120689655vw ,5rem)
   }
@@ -3114,6 +3066,9 @@ h6 {
   .hero__social-block {
     padding-bottom: clamp(5.625rem ,3.4819515135rem + 4.4646843468vw ,6.25rem)
   }
+  .partners__item {
+    width: clamp(5rem ,-1.4291454594rem + 13.3940530405vw ,6.875rem)
+  }
 }
 @media (min-width:23.4375em) and (max-width:61.99875em) {
   .hero__button {
@@ -3166,6 +3121,9 @@ h6 {
     -moz-column-gap: clamp(.625rem ,.5498120301rem + .3759398496vw ,.9375rem);
     column-gap: clamp(.625rem ,.5498120301rem + .3759398496vw ,.9375rem)
   }
+  .partners__item {
+    margin-right: clamp(2.8125rem ,-.1198308271rem + 14.6616541353vw ,15rem)
+  }
   .tokenomiks {
     margin-top: clamp(-5rem ,.272556391rem + -5.1127819549vw ,-.75rem)
   }
@@ -3181,12 +3139,20 @@ h6 {
     column-gap: clamp(.9375rem ,.4111842105rem + 2.6315789474vw ,3.125rem)
   }
 }
-@media (min-width:61.99875em) and (max-width:103.125em) {
+@media (min-width:120em) and (max-width:160em) {
   .hero__wawe1 {
-    height: clamp(4rem ,-1.276328987rem + 8.5103796237vw ,7.5rem)
+    height: clamp(7.5rem ,5.625rem + 1.5625vw ,8.125rem)
   }
   .hero__wawes {
-    height: clamp(4rem ,-1.276328987rem + 8.5103796237vw ,7.5rem)
+    height: clamp(7.5rem ,5.625rem + 1.5625vw ,8.125rem)
+  }
+}
+@media (min-width:61.99875em) and (max-width:124.49875em) {
+  .hero__wawe1 {
+    height: clamp(4rem ,.52807rem + 5.6vw ,7.5rem)
+  }
+  .hero__wawes {
+    height: clamp(4rem ,.52807rem + 5.6vw ,7.5rem)
   }
 }
 @media (min-width:100em) and (max-width:120em) {
@@ -3322,6 +3288,11 @@ h6 {
 @media (min-width:33.125em) and (max-width:53.12375em) {
   .how-sheet__title {
     font-size: clamp(.625rem ,-.4102209513rem + 3.1251953247vw ,1.25rem)
+  }
+}
+@media (min-width:20em) and (max-width:47.99875em) {
+  .partners__item {
+    width: clamp(2.8125rem ,-.0894152641rem + 14.5095763204vw ,6.875rem)
   }
 }
 @media (min-width:20em) and (max-width:62em) {
