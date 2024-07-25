@@ -39,7 +39,7 @@ body {
   color: var(--text-primary);
   line-height: 1.2;
   font-family: DelaGothicOne,serif;
-  font-size: .875rem;
+  font-size: 1.5rem;
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -250,7 +250,7 @@ h6 {
   object-fit: contain
 }
 .page__about {
-  margin-top: -1.5rem
+  margin-top: -1.875rem
 }
 .hero {
   position: relative
@@ -280,16 +280,16 @@ h6 {
   top: 3%;
   left: -4%;
   aspect-ratio: 846/893;
-  -webkit-transform: rotate(-90deg);
-  transform: rotate(-90deg);
+  -webkit-transform: translateY(100%) rotate(-90deg);
+  transform: translateY(100%) rotate(-90deg);
   will-change: transform;
-  transition: -webkit-transform .6s ease 1s;
-  transition: transform .6s ease 1s;
-  transition: transform .6s ease 1s,-webkit-transform .6s ease 1s
+  transition: -webkit-transform .6s ease 1.2s;
+  transition: transform .6s ease 1.2s;
+  transition: transform .6s ease 1.2s,-webkit-transform .6s ease 1.2s
 }
 .loaded .hero__bg img:nth-child(2) {
-  -webkit-transform: rotate(0);
-  transform: rotate(0)
+  -webkit-transform: translateY(0) rotate(0);
+  transform: translateY(0) rotate(0)
 }
 .hero__bg img:nth-child(3) {
   width: 100%;
@@ -748,7 +748,7 @@ h6 {
   position: absolute;
   width: 100%;
   height: 87%;
-  top: -4%;
+  top: -3%;
   left: 0;
   pointer-events: none;
   overflow: hidden;
@@ -1094,14 +1094,21 @@ h6 {
   z-index: 5;
   -webkit-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
-  will-change: transform,opacity,visibility;
-  transition: opacity .2s ease 0s,visibility .2s ease 0s,-webkit-transform .3s;
-  transition: opacity .2s ease 0s,visibility .2s ease 0s,transform .3s;
-  transition: opacity .2s ease 0s,visibility .2s ease 0s,transform .3s,-webkit-transform .3s
+  will-change: opacity,visibility;
+  transition: opacity .2s ease,visibility .2s ease,-webkit-transform .3s;
+  transition: opacity .2s ease,visibility .2s ease,transform .3s;
+  transition: opacity .2s ease,visibility .2s ease,transform .3s,-webkit-transform .3s
 }
 .video-how__wraper .play-btn.hidden {
   opacity: 0;
   visibility: hidden
+}
+.video-how__wraper .play-btn img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0
 }
 .video-how__wraper video {
   position: absolute;
@@ -1114,17 +1121,17 @@ h6 {
   -o-object-fit: cover;
   object-fit: cover
 }
-.video-how__wraper img {
+.video-how__wraper > img {
   position: absolute;
   z-index: 5
 }
-.video-how__wraper img:nth-child(1) {
+.video-how__wraper > img:nth-child(1) {
   width: 100%;
   height: 100%;
   top: 0;
   left: 0
 }
-.video-how__wraper img:nth-child(2) {
+.video-how__wraper > img:nth-child(2) {
   width: 100%
 }
 .video-how__ground {
@@ -1590,6 +1597,42 @@ h6 {
     transform: rotate(2deg)
   }
 }
+@-webkit-keyframes danceJoin {
+  0% {
+    -webkit-transform: translate(0,0) rotate(0);
+    transform: translate(0,0) rotate(0)
+  }
+  20% {
+    -webkit-transform: translate(0,-1.5%) rotate(-2deg);
+    transform: translate(0,-1.5%) rotate(-2deg)
+  }
+  50% {
+    -webkit-transform: translate(0,0) rotate(0);
+    transform: translate(0,0) rotate(0)
+  }
+  75% {
+    -webkit-transform: translate(0,1.5%) rotate(2deg);
+    transform: translate(0,1.5%) rotate(2deg)
+  }
+}
+@keyframes danceJoin {
+  0% {
+    -webkit-transform: translate(0,0) rotate(0);
+    transform: translate(0,0) rotate(0)
+  }
+  20% {
+    -webkit-transform: translate(0,-1.5%) rotate(-2deg);
+    transform: translate(0,-1.5%) rotate(-2deg)
+  }
+  50% {
+    -webkit-transform: translate(0,0) rotate(0);
+    transform: translate(0,0) rotate(0)
+  }
+  75% {
+    -webkit-transform: translate(0,1.5%) rotate(2deg);
+    transform: translate(0,1.5%) rotate(2deg)
+  }
+}
 .join {
   position: relative;
   z-index: 20;
@@ -1628,7 +1671,7 @@ h6 {
   z-index: 10
 }
 .join__bg img:nth-child(3) {
-  bottom: -8%;
+  bottom: -7%;
   left: 0;
   aspect-ratio: 1920/600;
   z-index: 5
@@ -1660,7 +1703,9 @@ h6 {
   right: 9%;
   width: 32.9%;
   aspect-ratio: 631/592;
-  z-index: 5
+  z-index: 5;
+  -webkit-animation: danceJoin 6.5s infinite linear;
+  animation: danceJoin 6.5s infinite linear
 }
 .join__seaweeds {
   position: absolute;
@@ -1680,7 +1725,6 @@ h6 {
   transform-origin: center bottom
 }
 .join__seaweeds img:nth-child(1) {
-  aspect-ratio: 154/196;
   width: 8%;
   left: 4%;
   bottom: -1%;
@@ -1688,22 +1732,19 @@ h6 {
   animation: seaweeds 6s infinite linear
 }
 .join__seaweeds img:nth-child(2) {
-  aspect-ratio: 98/218;
   width: 4.1%;
   left: 27%;
   -webkit-animation: seaweeds 7.5s infinite linear;
   animation: seaweeds 7.5s infinite linear
 }
 .join__seaweeds img:nth-child(3) {
-  aspect-ratio: 112/410;
-  width: 4.8%;
+  width: 5.8%;
   right: 11%;
   -webkit-animation: seaweeds 6.5s infinite linear;
   animation: seaweeds 6.5s infinite linear
 }
 .join__seaweeds img:nth-child(4) {
-  aspect-ratio: 186/237;
-  width: 9.7%;
+  width: 7.7%;
   right: 0;
   -webkit-animation: seaweeds 8s infinite linear;
   animation: seaweeds 8s infinite linear
@@ -2095,6 +2136,9 @@ h6 {
   .footer__copy {
     font-size: 1.5625rem
   }
+  .page__about {
+    margin-top: -1.75rem
+  }
   .page__partners {
     margin-top: -2.5rem
   }
@@ -2265,12 +2309,12 @@ h6 {
 }
 @media (max-width:20em) {
   .menu__link {
-    font-size: 1.625rem
+    font-size: 1.5rem
   }
   .hero__social-items {
-    -webkit-column-gap: .625rem;
-    -moz-column-gap: .625rem;
-    column-gap: .625rem
+    -webkit-column-gap: .125rem;
+    -moz-column-gap: .125rem;
+    column-gap: .125rem
   }
   .hero__wawe1 {
     height: 4rem
@@ -2481,13 +2525,13 @@ h6 {
     bottom: calc(50% - .0625rem)
   }
   .page__about {
-    margin-top: -1.625rem
+    margin-top: -1.875rem
   }
   .hero {
     min-height: 100svh
   }
   .hero__bg img:nth-child(2) {
-    top: 7%
+    top: 20%
   }
   .hero__bg img:nth-child(3) {
     top: 30%;
@@ -2566,6 +2610,9 @@ h6 {
   .about__img img {
     width: 53%
   }
+  .about__bubbles-wrapper {
+    top: -2%
+  }
   .card-about {
     width: 100%;
     width: 80%
@@ -2631,16 +2678,6 @@ h6 {
     align-self: flex-end;
     margin-left: 0;
     width: 100%
-  }
-  .video-how__wraper._watcher-view img {
-    -webkit-transform: translate(0,0);
-    transform: translate(0,0)
-  }
-  .video-how__wraper img {
-    will-change: transform,opacity;
-    -webkit-transform: translate(150%,0);
-    transform: translate(150%,0);
-    transition: all .7s
   }
   .video-how__ground img:nth-child(2) {
     bottom: -18%;
@@ -2775,6 +2812,9 @@ h6 {
     left: 12%;
     top: 17%
   }
+  .about {
+    aspect-ratio: 992/1613
+  }
   .card-about {
     width: 100%
   }
@@ -2801,6 +2841,12 @@ h6 {
   }
   .join__button {
     box-shadow: 0 .3125rem 0 0 var(--text-primary)
+  }
+}
+@media (max-width:35.9375em) {
+  .hero__bg img:nth-child(2) {
+    top: 17%;
+    width: 80%
   }
 }
 @media (max-width:33.12375em) {
@@ -3069,7 +3115,7 @@ h6 {
 }
 @media (min-width:20em) and (max-width:61.99875em) {
   .menu__link {
-    font-size: clamp(1.625rem ,1.625rem + 0 ,1.625rem)
+    font-size: clamp(1.5rem ,1.4404744189rem + .2976279056vw ,1.625rem)
   }
   .hero__wawe1 {
     height: clamp(4rem ,2.9285395399rem + 5.3573023007vw ,6.25rem)
@@ -3271,9 +3317,9 @@ h6 {
 }
 @media (min-width:20em) and (max-width:103.125em) {
   .hero__social-items {
-    -webkit-column-gap: clamp(.625rem ,.625rem + 0 ,.625rem);
-    -moz-column-gap: clamp(.625rem ,.625rem + 0 ,.625rem);
-    column-gap: clamp(.625rem ,.625rem + 0 ,.625rem)
+    -webkit-column-gap: clamp(.125rem ,.0046992481rem + .6015037594vw ,.625rem);
+    -moz-column-gap: clamp(.125rem ,.0046992481rem + .6015037594vw ,.625rem);
+    column-gap: clamp(.125rem ,.0046992481rem + .6015037594vw ,.625rem)
   }
   .how-buy {
     padding-top: clamp(5.625rem ,7.9511278195rem + -2.2556390977vw ,7.5rem)
