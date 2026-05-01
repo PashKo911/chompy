@@ -13,6 +13,8 @@ The website is designed to introduce the token, explain how to buy it, present t
 
 The project combines strong themed art direction with animated UI elements and a scroll-based storytelling structure tailored for crypto audiences.
 
+It was optimized for production use and achieves **PageSpeed 90+** performance score.
+
 ---
 
 ## ⚡ Highlights
